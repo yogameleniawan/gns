@@ -1,6 +1,6 @@
 <p align="center">
   <img src="frontend/public/gns.png" alt="GNS" width="120" />
-  <img src="frontend/public/logo.png" alt="GNS" width="120" />
+  <img src="frontend/public/logo_icon.png" alt="GNS" width="120" />
 </p>
 
 <h1 align="center">GNS — Go + Next.js + shadcn/ui</h1>
