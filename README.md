@@ -92,7 +92,7 @@ bun dev        # or: npm run dev
 | Field    | Value           |
 | -------- | --------------- |
 | Email    | `admin@gns.com` |
-| Password | `admin@123`     |
+| Password | `admin123`     |
 
 ## 📁 Project Structure
 
