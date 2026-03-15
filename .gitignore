@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Docker logs
+*.log
+docker-compose.override.yml
+
+# OS files
+.DS_Store
+Thumbs.db

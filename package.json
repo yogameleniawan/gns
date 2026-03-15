@@ -1,0 +1,19 @@
+{
+  "name": "gns",
+  "private": true,
+  "scripts": {
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2"
+  },
+  "lint-staged": {
+    "backend/**/*.go": [
+      "gofmt -w"
+    ],
+    "frontend/**/*.{ts,tsx,js,jsx}": [
+      "npm run lint --prefix frontend"
+    ]
+  }
+}
