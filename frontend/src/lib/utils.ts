@@ -38,35 +38,3 @@ export function formatValue(value: number): string {
   }
   return new Intl.NumberFormat('id-ID').format(absValue)
 }
-
-import { TimeRange } from '@/src/application/store/broker.store'
-import { startOfMonth, endOfMonth, subDays } from 'date-fns'
-
-export function getDateRange(timeRange: TimeRange, customDateRange: { from: Date | null; to: Date | null }) {
-  const today = new Date()
-  let from = today
-  let to = today
-
-  switch (timeRange) {
-    case 'today':
-      from = today
-      to = today
-      break
-    case '1w':
-      from = subDays(today, 7)
-      to = today
-      break
-    case '1m':
-      from = startOfMonth(today)
-      to = endOfMonth(today)
-      break
-    case 'range':
-      if (customDateRange.from && customDateRange.to) {
-        from = customDateRange.from
-        to = customDateRange.to
-      }
-      break
-  }
-
-  return { from, to }
-}
