@@ -2,7 +2,7 @@
 BINARY_NAME=main
 
 # Docker Compose file
-COMPOSE_FILE=docker-compose.yml
+COMPOSE_FILE=docker-compose.yaml
 DEV_COMPOSE_FILE=docker-compose.dev.yaml
 
 # migration dir
@@ -18,11 +18,11 @@ init:
 
 ### up container
 up:
-	docker-compose -f $(COMPOSE_FILE) up --build
+	docker compose -f $(COMPOSE_FILE) up --build
 
 ### shutdown container
 down:
-	docker-compose -f $(COMPOSE_FILE) down
+	docker compose -f $(COMPOSE_FILE) down
 
 ### Run Only This App
 run:
@@ -64,16 +64,16 @@ db-shell:
 
 ### Dev with environment variables support
 dev:
-	docker-compose -f $(DEV_COMPOSE_FILE) up --build
+	docker compose -f $(DEV_COMPOSE_FILE) up --build
 
 ### Dev down
 dev-down:
-	docker-compose -f $(DEV_COMPOSE_FILE) down
+	docker compose -f $(DEV_COMPOSE_FILE) down
 
 ### Dev with clean volumes
 dev-clean:
-	docker-compose -f $(DEV_COMPOSE_FILE) down -v
-	docker-compose -f $(DEV_COMPOSE_FILE) up --build
+	docker compose -f $(DEV_COMPOSE_FILE) down -v
+	docker compose -f $(DEV_COMPOSE_FILE) up --build
 
 ### Help
 help:

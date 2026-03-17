@@ -5,8 +5,8 @@ services:
     image: postgres:16-alpine
     container_name: gns-postgres-dev
     environment:
-      POSTGRES_USER: ${DB_USER:-gns}
-      POSTGRES_PASSWORD: ${DB_PASSWORD:-gns123}
+      POSTGRES_USER: ${DB_USER:-gns_user}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-gns_password}
       POSTGRES_DB: ${DB_NAME:-gns_db}
     ports:
       - "${DB_PORT:-5432}:5432"
@@ -16,7 +16,7 @@ services:
       - app-network
     restart: unless-stopped
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-gns}"]
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-gns_user}"]
       interval: 10s
       timeout: 5s
       retries: 5
